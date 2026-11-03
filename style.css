@@ -1,0 +1,298 @@
+:root {
+    --bg-color: #f4f7f6;
+    --text-color: #333333;
+    --card-bg: #ffffff;
+    --primary-color: #0056b3;
+    --secondary-color: #00a8ff;
+    --accent-color: #ff6b6b;
+    --border-color: #e0e0e0;
+    --shadow: 0 10px 30px rgba(0,0,0,0.08);
+    --transition: all 0.3s ease;
+}
+
+[data-theme="dark"] {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --card-bg: #1e1e1e;
+    --primary-color: #4da3ff;
+    --secondary-color: #0077b3;
+    --border-color: #333333;
+    --shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.7;
+    transition: var(--transition);
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: var(--card-bg);
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+    transition: var(--transition);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.theme-toggle {
+    background: none;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: var(--transition);
+}
+
+.theme-toggle:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+header {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), 
+                url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 0 20px;
+}
+
+header h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+header p {
+    font-size: 1.5rem;
+    max-width: 800px;
+    margin-bottom: 30px;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 4px 15px rgba(0, 168, 255, 0.4);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    background-color: var(--primary-color);
+    box-shadow: 0 6px 20px rgba(0, 168, 255, 0.6);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: var(--accent-color);
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+.about-grid {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    background-color: var(--card-bg);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.about-img {
+    flex: 1;
+    height: 400px;
+    background: url('https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=800&q=80') center/cover;
+}
+
+.about-text {
+    flex: 1;
+    padding: 40px;
+}
+
+.about-text h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.fact-generator {
+    background-color: var(--card-bg);
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    margin-top: 50px;
+    box-shadow: var(--shadow);
+    border: 2px dashed var(--primary-color);
+}
+
+#random-fact-display {
+    font-size: 1.3rem;
+    font-style: italic;
+    margin: 20px 0;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+}
+
+.engineering-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 25px;
+}
+
+.card-content h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.quiz-section {
+    background-color: var(--card-bg);
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    margin-top: 50px;
+}
+
+.question {
+    margin-bottom: 25px;
+}
+
+.question h4 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.options label {
+    display: block;
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    background-color: var(--bg-color);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition);
+    border: 1px solid var(--border-color);
+}
+
+.options label:hover {
+    background-color: rgba(0, 86, 179, 0.1);
+    border-color: var(--primary-color);
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+#quiz-result {
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+footer {
+    background-color: #111;
+    color: #fff;
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 50px;
+}
+
+footer h3 {
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    header h1 { font-size: 2.5rem; }
+    .about-grid { flex-direction: column; }
+    .about-img { width: 100%; height: 250px; }
+    nav { padding: 15px 20px; }
+}

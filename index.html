@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Science online: наука, що змінює світ</title>
+    <!-- Підключення файлу стилів -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Science Online</div>
+        <button class="theme-toggle" id="theme-btn" onclick="toggleTheme()">Темна тема 🌙</button>
+    </nav>
+
+    <header>
+        <h1>Science online: наука, що змінює світ</h1>
+        <p>Всесвітній день науки та нескінченна еволюція інженерної думки. Подорож від перших механізмів до штучного інтелекту.</p>
+        <a href="#about" class="btn-primary">Почати дослідження</a>
+    </header>
+
+    <main class="container">
+        <section id="about">
+            <h2 class="section-title">Що це за свято?</h2>
+            <div class="about-grid">
+                <div class="about-img"></div>
+                <div class="about-text">
+                    <h3>За мир і розвиток</h3>
+                    <p>Всесвітній день науки за мир і розвиток відзначається щороку <strong>10 листопада</strong>. Започатковане ЮНЕСКО у 2001 році, це свято покликане підкреслити роль науки у створенні сталого майбутнього для всіх нас.</p>
+                    <br>
+                    <p>Наука не існує у вакуумі — вона тісно переплетена з інженерією, яка перетворює теоретичні відкриття на реальні технології.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="fact-generator">
+            <h2 style="color: var(--primary-color);">Цікаві науково-інженерні факти</h2>
+            <p>Натисніть кнопку нижче, щоб дізнатися щось нове!</p>
+            <div id="random-fact-display">Тут з'явиться цікавий факт...</div>
+            <button class="btn-primary" onclick="generateFact()">💡 Згенерувати факт</button>
+        </section>
+
+        <section id="engineering" style="margin-top: 80px;">
+            <h2 class="section-title">Еволюція інженерії</h2>
+            <div class="engineering-grid">
+                
+                <div class="card">
+                    <div class="badge">Минуле</div>
+                    <img src="https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?auto=format&fit=crop&w=600&q=80" alt="Механіка">
+                    <div class="card-content">
+                        <h3>Механічна інженерія</h3>
+                        <p>Від винаходу колеса та систем акведуків у Стародавньому Римі до парових двигунів.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="badge">Епоха змін</div>
+                    <img src="https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?auto=format&fit=crop&w=600&q=80" alt="Електроніка">
+                    <div class="card-content">
+                        <h3>Електротехніка</h3>
+                        <p>Приборкання електрики змінило ніч на день і дозволило створити радіо, телебачення та перші комп'ютери.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="badge" style="background-color: #28a745;">Сьогодення</div>
+                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&q=80" alt="Програмування">
+                    <div class="card-content">
+                        <h3>Інженерія ПЗ (Software)</h3>
+                        <p>Сучасний світ тримається на коді. Інженери-програмісти створюють нейромережі та системи кібербезпеки.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="quiz-section">
+            <h2 class="section-title">Перевір свої знання</h2>
+            
+            <div class="question">
+                <h4>1. Яка організація започаткувала Всесвітній день науки?</h4>
+                <div class="options">
+                    <label><input type="radio" name="q1" value="wrong"> ООН</label>
+                    <label><input type="radio" name="q1" value="correct"> ЮНЕСКО</label>
+                    <label><input type="radio" name="q1" value="wrong"> ВООЗ</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <h4>2. Який птах надихнув інженерів на створення форми надшвидкісного потяга Сінкансен?</h4>
+                <div class="options">
+                    <label><input type="radio" name="q2" value="wrong"> Сокіл</label>
+                    <label><input type="radio" name="q2" value="wrong"> Орел</label>
+                    <label><input type="radio" name="q2" value="correct"> Рибалочка (Kingfisher)</label>
+                </div>
+            </div>
+
+            <button class="btn-primary" onclick="checkQuiz()">✅ Дізнатися результат</button>
+            <div id="quiz-result"></div>
+        </section>
+
+    </main>
+
+    <footer>
+        <h3 style="margin-bottom: 15px;">Над проєктом працювали:</h3>
+        <p style="max-width: 800px; margin: 0 auto; line-height: 1.8; font-size: 1.1rem;">
+            Бєляєв Денис, Провороцький Ростислав, Москаленко Анастасія, Синішкович Софія, Скидан Тетяна, Здоренко Олексій, Самсоненко Іван, Рудяга Ольга
+        </p>
+        <p style="margin-top: 20px; opacity: 0.6; font-size: 0.95rem;">Студенти групи ІТ-2-1 | Спеціальність: Інженерія програмного забезпечення</p>
+    </footer>
+
+    <!-- Підключення файлу скриптів -->
+    <script src="script.js"></script>
+</body>
+</html>
